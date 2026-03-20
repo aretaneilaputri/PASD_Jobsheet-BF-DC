@@ -23,3 +23,28 @@ Tidak menggunakan perulangan, tapi rekursi
 Jawaban: kedua method sama-sama menghitung faktorial, tetapi cara kerjanya berbeda.
 Method faktorialBF() menggunakan perulangan (loop) dengan mengalikan angka dari 1 sampai n secara bertahap. Cara ini lebih sederhana dan mudah dipahami karena prosesnya langsung dan berurutan.
 Sedangkan faktorialDC() menggunakan rekursi (Divide and Conquer), yaitu memecah perhitungan menjadi masalah yang lebih kecil dengan memanggil fungsi itu sendiri sampai mencapai kondisi dasar. Cara ini lebih efisien dan terstruktur, tetapi membutuhkan pemahaman lebih karena melibatkan pemanggilan fungsi berulang.Jadi, Brute Force lebih simpel, sedangkan Divide and Conquer lebih optimal tetapi lebih kompleks.
+
+Pertanyaan —— Percobaan 5.3
+1. Jelaskan mengenai perbedaan 2 method yang dibuat yaitu pangkatBF() dan pangkatDC()! 
+Jawaban:Method pangkatBF() menggunakan cara Brute Force, yaitu menghitung hasil pangkat dengan mengalikan angka secara berulang sesuai jumlah pangkat. Prosesnya sederhana karena hanya menggunakan perulangan.Sedangkan pangkatDC() menggunakan Divide and Conquer (rekursi), yaitu memecah perhitungan menjadi bagian yang lebih kecil, misalnya pangkat dibagi dua, lalu hasilnya digabung kembali. Cara ini lebih efisien karena mengurangi jumlah perkalian.
+2. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan! 
+Jawaban:Iya, tahap combine sudah ada dalam kode.
+Contohnya:
+return (pangkatDC(a, n/2) * pangkatDC(a, n/2));
+Bagian ini menggabungkan hasil dari dua proses rekursi (kiri dan kanan), sehingga termasuk tahap combine dalam Divide and Conquer.
+3. Pada method pangkatBF()terdapat parameter untuk melewatkan nilai yang akan dipangkatkan 
+dan pangkat berapa, padahal di sisi lain di class Pangkat telah ada atribut nilai dan pangkat, 
+apakah menurut Anda method tersebut tetap relevan untuk memiliki parameter? Apakah bisa 
+jika method tersebut dibuat dengan tanpa parameter? Jika bisa, seperti apa method 
+pangkatBF() yang tanpa parameter? 
+Jawaban:Sebenarnya parameter tidak wajib, karena di dalam class sudah ada atribut nilai dan pangkat. Method tetap bisa dibuat tanpa parameter dengan langsung menggunakan atribut tersebut. Jadi, method masih relevan pakai parameter (lebih fleksibel), tapi juga bisa tanpa parameter.
+Contoh tanpa parameter:
+int pangkatBF() {
+    int hasil = 1;
+    for(int i = 0; i < pangkat; i++) {
+        hasil *= nilai;
+    }
+    return hasil;
+}
+4. Tarik tentang cara kerja method pangkatBF() dan pangkatDC()!
+Jawaban:Method pangkatBF() bekerja dengan cara mengalikan angka secara berulang dari 1 sampai jumlah pangkat, sehingga prosesnya langsung dan mudah dipahami.Sedangkan pangkatDC() bekerja dengan cara membagi masalah menjadi lebih kecil (rekursi), lalu menggabungkan hasilnya kembali. Cara ini lebih efisien terutama untuk pangkat besar, meskipun lebih kompleks.

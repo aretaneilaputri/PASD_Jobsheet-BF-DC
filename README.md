@@ -48,3 +48,23 @@ int pangkatBF() {
 }
 4. Tarik tentang cara kerja method pangkatBF() dan pangkatDC()!
 Jawaban:Method pangkatBF() bekerja dengan cara mengalikan angka secara berulang dari 1 sampai jumlah pangkat, sehingga prosesnya langsung dan mudah dipahami.Sedangkan pangkatDC() bekerja dengan cara membagi masalah menjadi lebih kecil (rekursi), lalu menggabungkan hasilnya kembali. Cara ini lebih efisien terutama untuk pangkat besar, meskipun lebih kompleks.
+
+Pertanyaan —— Percobaan 5.4
+1. Kenapa dibutuhkan variable mid pada method TotalDC()?
+Jawaban:Variabel mid digunakan untuk membagi array menjadi dua bagian, yaitu bagian kiri dan kanan. Ini penting karena dalam algoritma Divide and Conquer, masalah harus dipecah menjadi sub-masalah yang lebih kecil. Dengan adanya mid, proses pembagian data bisa dilakukan secara sistematis hingga mencapai bagian terkecil.
+2. Untuk apakah statement di bawah ini dilakukan dalam TotalDC?
+double lsum totalDC(arr, 1, mid);
+double rsum totalDC(arr, mid+1, г),
+Jawaban:Statement tersebut digunakan untuk menghitung jumlah nilai pada dua bagian array secara terpisah.
+lsum menghitung total bagian kiri
+rsum menghitung total bagian kanan
+Keduanya dipanggil secara rekursif sampai mencapai base case. Ini merupakan tahap conquer dalam Divide and Conquer.
+3. Kenapa diperlukan penjumlahan hasil Isum dan rsum seperti di bawah ini?
+return lsumersum;
+Jawaban:Karena hasil perhitungan sudah dipisah menjadi dua bagian (kiri dan kanan), maka untuk mendapatkan total keseluruhan harus digabungkan kembali. Penjumlahan lsum + rsum adalah tahap combine, yaitu menggabungkan hasil dari sub-masalah menjadi solusi akhir.
+4. Apakah base case dari totalDC()?
+Jawaban:Base case terjadi saat:
+if(l == r)
+Yang artinya hanya ada satu elemen dalam array, sehingga tidak perlu dibagi lagi dan langsung dikembalikan nilainya.
+5. Tarik Kesimpulan tentang cara kerja totalDC
+Jawaban:Method totalDC() bekerja dengan cara membagi array menjadi dua bagian menggunakan mid, kemudian masing-masing bagian dihitung secara rekursif. Setelah itu, hasil dari kedua bagian dijumlahkan kembali untuk mendapatkan total keseluruhan. Cara ini membuat proses lebih terstruktur dan efisien dibandingkan menghitung secara langsung.
